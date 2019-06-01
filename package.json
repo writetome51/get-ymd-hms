@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/get-array-year-month-day-hours-minutes-seconds",
   "version": "0.0.1",
-  "description": "",
+  "description": "2 functions: one returns array of current [year, month, day], the other returns array of current [hours, minutes, seconds]",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,7 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds.git"
   },
-  "keywords": [],
+  "keywords": [
+    "current",
+    "date",
+    "dates",
+    "times",
+    "array"
+  ],
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
