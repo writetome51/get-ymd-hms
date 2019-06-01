@@ -1,0 +1,25 @@
+{
+  "name": "@writetome51/get-array-year-month-day-hours-minutes-seconds",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds.git"
+  },
+  "keywords": [],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds/issues"
+  },
+  "homepage": "https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "@writetome51/not": "^1.0.5"
+  }
+}
