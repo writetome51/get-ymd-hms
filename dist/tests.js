@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("./index");
-var result = index_1.getArray_yearMonthDay();
+import { getArray_hoursMinutesSeconds, getArray_yearMonthDay } from './index';
+let result = getArray_yearMonthDay();
 if (Array.isArray(result) && result.length === 3)
     console.log('test 1 passed');
 else
@@ -14,7 +12,7 @@ if (isFinite(Number(result[0])) && isFinite(Number(result[1])) && isFinite(Numbe
     console.log('test 2A passed');
 else
     console.log('test 2A FAILED');
-result = index_1.getArray_yearMonthDay(true);
+result = getArray_yearMonthDay(true);
 if (Array.isArray(result) && result.length === 3)
     console.log('test 3 passed');
 else
@@ -27,7 +25,7 @@ if (isFinite(Number(result[0])) && isFinite(Number(result[1])) && isFinite(Numbe
     console.log('test 4A passed');
 else
     console.log('test 4A FAILED');
-result = index_1.getArray_hoursMinutesSeconds();
+result = getArray_hoursMinutesSeconds();
 if (Array.isArray(result) && result.length === 3)
     console.log('test 5 passed');
 else

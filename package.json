@@ -1,7 +1,8 @@
 {
-  "name": "@writetome51/get-array-year-month-day-hours-minutes-seconds",
+  "name": "@writetome51/get-ymd-hms",
   "version": "0.0.1",
-  "description": "2 functions: one returns array of current [year, month, day], the other returns array of current [hours, minutes, seconds]",
+  "description": "Function returns object containing ymd (year month day) and hms (hour minute second)",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,23 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds.git"
+    "url": "git+https://github.com/writetome51/get-ymd-hms.git"
   },
   "keywords": [
     "current",
     "date",
     "dates",
     "times",
-    "array"
+    "object"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds/issues"
+    "url": "https://github.com/writetome51/get-ymd-hms/issues"
   },
-  "homepage": "https://github.com/writetome51/get-array-year-month-day-hours-minutes-seconds#readme",
+  "homepage": "https://github.com/writetome51/get-ymd-hms#readme",
   "devDependencies": {},
   "dependencies": {
-    "@writetome51/not": "^1.0.5"
+    "@writetome51/not": ">=1.0.5",
+    "@writetome51/to-str": ">=0.0.1"
   }
 }

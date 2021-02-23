@@ -1,26 +1,13 @@
-import { not } from '@writetome51/not';
-import { __ensureMoreThanOneDigitForEach } from './privy/private_functions';
+import { get_hms, get_ymd } from './privy';
 
 
-// Returns array of strings representing current [year, month, day] (in that order).
-// Example:  ['15', '02', '20']  (meaning 2015, February, the 20th)
+export function get_ymd_hms(
+	includeFullYear = false // if false, year has 2 digits
+): {
+	ymd: { y: string, m: string, d: string },
+	hms: { h: string, m: string, s: string }
+} {
+	let date = new Date(); // gets user machine's local date and time.
 
-export function getArray_yearMonthDay(includeFullYear = false): string[] {
-	let date = new Date();
-
-	let parts = [String(date.getFullYear()), String(date.getMonth() + 1), String(date.getDate())];
-	if (not(includeFullYear)) parts[0] = parts[0].slice(2); // trims off first 2 digits.
-
-	return __ensureMoreThanOneDigitForEach(parts);
-}
-
-
-// Returns array of strings representing current [hours, minutes, seconds] (in that order).
-// Example:  ['16', '20', '20']  (meaning 4:20pm and 20 seconds)
-
-export function getArray_hoursMinutesSeconds(): string[] {
-	let date = new Date();
-
-	let parts = [String(date.getHours()), String(date.getMinutes()), String(date.getSeconds())];
-	return __ensureMoreThanOneDigitForEach(parts);
+	return {ymd: get_ymd(date, includeFullYear), hms: get_hms(date)};
 }
