@@ -2,11 +2,11 @@ import {toStr} from '@writetome51/to-str';
 import {not} from '@writetome51/not';
 
 
-export function get_ymd(date, includeFullYear = false) {
+export function get_ymd(date, options = {includeFullYear: false}) {
 	let ymd = {
 		y: toStr(date.getFullYear()), m: toStr(date.getMonth() + 1), d: toStr(date.getDate())
 	};
-	if (not(includeFullYear))
+	if (not(options.includeFullYear))
 		ymd['y'] = ymd['y'].slice(2); // trims off first 2 digits.
 	return ensureMoreThanOneDigitForEach(ymd);
 }
