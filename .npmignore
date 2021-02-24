@@ -1,5 +1,4 @@
 lib/
 .idea/
 dist/tests.js
-dist/privy.d.ts
 tsconfig.json

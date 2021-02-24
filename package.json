@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/get-ymd-hms",
   "version": "0.0.1",
-  "description": "Function returns object containing ymd (year month day) and hms (hour minute second)",
+  "description": "Function returns machine's local date/time as object containing ymd (year month day) and hms (hour minute second)",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

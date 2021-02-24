@@ -1,14 +1,18 @@
-import { get_hms, get_ymd } from './privy';
+import { get_hms_local, get_hms_UTC, get_ymd_local, get_ymd_UTC } from './privy';
+import { YMD_HMS } from './types';
+
+export { YMD_HMS, YMD, HMS } from './types';
 
 
-export function get_ymd_hms(
-	options = {includeFullYear: false} // if false, year has 2 digits
-): {
-	ymd: { y: string, m: string, d: string },
-	hms: { h: string, m: string, s: string }
-} {
-	let date = new Date(); // gets user machine's local date and time.
-
-	return {ymd: get_ymd(date, options), hms: get_hms(date)};
+export function get_ymd_hms_local(
+	date: Date, options = {includeFullYear: false} // if false, year has 2 digits
+): YMD_HMS {
+	return {ymd: get_ymd_local(date, options), hms: get_hms_local(date)};
 }
 
+
+export function get_ymd_hms_UTC(
+	date: Date, options = {includeFullYear: false} // if false, year has 2 digits
+): YMD_HMS {
+	return {ymd: get_ymd_UTC(date, options), hms: get_hms_UTC(date)};
+}

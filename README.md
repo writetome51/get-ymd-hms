@@ -1,8 +1,7 @@
-# get_ymd_hms(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options? = {includeFullYear: false}<br>): {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ymd: {y: string, m: string, d: string},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hms: {h: string, m: string, s: string}<br>&nbsp;&nbsp;&nbsp;} 
+# get_ymd_hms(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date: Date,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options? = {includeFullYear: false}<br>): {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ymd: {y: string, m: string, d: string},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hms: {h: string, m: string, s: string}<br>&nbsp;&nbsp;&nbsp;} 
 
-Returns machine's local date and time as object  
-`{ymd: {y, m, d}, hms: {h, m, s}}`, with each value having two digits  
-(if `options.includeFullYear` is true, `ymd.y` will have four.)
+Returns `date` as `{ymd: {y, m, d}, hms: {h, m, s}}`, with each value having 2 digits  
+(if `options.includeFullYear` is `true`, `ymd.y` will have 4.)
 
 
 ## Examples
