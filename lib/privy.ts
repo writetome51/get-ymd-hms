@@ -23,14 +23,14 @@ export function get_hms(date: Date): { h: string, m: string, s: string } {
 
 
 export function ensureMoreThanOneDigitForEach(obj) {
-	let keys = Object.keys(obj), i = -1, length = keys.length;
-	while (++i < length) obj[keys[i]] = __ensureMoreThanOneDigit(obj[keys[i]]);
+	for (let keys = Object.keys(obj), i = 0, length = keys.length; i < length; ++i) {
+		obj[keys[i]] = ensureMoreThanOneDigit(obj[keys[i]]);
+	}
 	return obj;
 
 
-	function __ensureMoreThanOneDigit(str) {
-		if (toStr(str).length === 1) str = ('0' + str);
+	function ensureMoreThanOneDigit(str) {
+		if (str.length === 1) str = ('0' + str);
 		return str;
 	}
-
 }
