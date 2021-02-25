@@ -1,4 +1,4 @@
-import {get_hms_local, get_ymd_local} from './privy.js';
+import {get_hms_local, get_ymd_local} from './privy/privy.js';
 import {get_ymd_hms_local, get_ymd_hms_UTC} from './index.js';
 
 // Tests 1 thru 3 cover functions in ./privy
@@ -34,7 +34,7 @@ if (result.y.length === 4 && typeof Number(result.y) === 'number' && isFinite(Nu
 } else console.log('test 3 FAILED');
 
 
-// These tests cover the main function:
+// These tests cover the main functions:
 
 let local = get_ymd_hms_local(date, {includeFullYear:true});
 keysCombined = Object.keys(local).join('');

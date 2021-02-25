@@ -1,4 +1,4 @@
-import {get_ymd_hms} from './privy.js';
+import {get_ymd_hms} from './privy/privy.js';
 
 
 export function get_ymd_hms_local(

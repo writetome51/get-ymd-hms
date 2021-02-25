@@ -1,16 +1,36 @@
-# get_ymd_hms(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date: Date,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options? = {includeFullYear: false}<br>): {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ymd: {y: string, m: string, d: string},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hms: {h: string, m: string, s: string}<br>&nbsp;&nbsp;&nbsp;} 
+# get_ymd_hms_local(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date: Date,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options? = {includeFullYear: false}<br>): YMD_HMS
 
-Returns `date` as `{ymd: {y, m, d}, hms: {h, m, s}}`, with each value having 2 digits  
-(if `options.includeFullYear` is `true`, `ymd.y` will have 4.)
+Returns `date` as `YMD_HMS` in local time.
+
+# get_ymd_hms_UTC(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date: Date,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options? = {includeFullYear: false}<br>): YMD_HMS
+
+Returns `date` as `YMD_HMS` in UTC (same as GMT) time.
+
+These types are part of the public API:
+
+# YMD_HMS = {ymd: Y_M_D, hms: H_M_S}
+
+# Y_M_D = {y: string, m: string, d: string}
+Each string has 2 digits, except: `Y_M_D.y` will have 4 digits if `options.includeFullYear`  
+is `true`.
+
+# H_M_S = {h: string, m: string, s: string}
+Each string has 2 digits.
+
+
+
+
+
+
 
 
 ## Examples
 ```ts
-get_ymd_hms();
+get_ymd_hms_local();
 // -->  {ymd: {y: '15', m: '02', d: '20'}, hms: {h: '13', m: '30', s: '30'}}
 //       (2015, February 20th, 1:30pm and 30 seconds)
 
-get_ymd_hms({includeFullYear: true});
+get_ymd_hms_UTC({includeFullYear: true});
 // -->  {ymd: {y: '2015', m: '02', d: '20'}, hms: {h: '13', m: '30', s: '30'}}
 //       (2015, February 20th, 1:30pm and 30 seconds)
 ```
