@@ -1,6 +1,6 @@
 import { toStr } from '@writetome51/to-str';
 import { not } from '@writetome51/not';
-import { HMS, YMD, YMD_HMS } from './types';
+import { H_M_S, Y_M_D, YMD_HMS } from './types';
 
 
 export function get_ymd_hms(date: Date,  time: 'local' | 'UTC',  options): YMD_HMS {
@@ -13,32 +13,31 @@ export function get_ymd_hms(date: Date,  time: 'local' | 'UTC',  options): YMD_H
 }
 
 
-export function get_ymd_local(date: Date, options): YMD {
-	let fnNames = {y: 'getFullYear', m: 'getMonth', d: 'getDate'}; // functions that get local time.
+export function get_ymd_local(date: Date, options): Y_M_D {
+	let fnNames = {y: 'getFullYear', m: 'getMonth', d: 'getDate'};
 	return get_ymd(date, fnNames, options);
 }
 
 
-export function get_hms_local(date: Date): HMS {
-	let fnNames = {h: 'getHours', m: 'getMinutes', s: 'getSeconds'}; // functions that get local time.
-	return get_hms(date, fnNames);
+export function get_hms_local(date: Date): H_M_S {
+	return get_hms(date, {h: 'getHours', m: 'getMinutes', s: 'getSeconds'});
 }
 
 
-export function get_ymd_UTC(date: Date, options): YMD {
+export function get_ymd_UTC(date: Date, options): Y_M_D {
 	let fnNames = {y: 'getUTCFullYear', m: 'getUTCMonth', d: 'getUTCDate'};
 	return get_ymd(date, fnNames, options);
 }
 
 
-export function get_hms_UTC(date: Date): HMS {
+export function get_hms_UTC(date: Date): H_M_S {
 	return get_hms(date, {h: 'getUTCHours', m: 'getUTCMinutes', s: 'getUTCSeconds'});
 }
 
 
 export function get_ymd(
 	date: Date, fnNames: { y: string, m: string, d: string }, options
-): YMD {
+): Y_M_D {
 	let {y, m, d} = fnNames;
 
 	return getPreparedObject({
@@ -53,10 +52,10 @@ export function get_ymd(
 }
 
 
-export function get_hms(date: Date,  fnNames: { h: string, m: string, s: string } ): HMS {
+export function get_hms(date: Date,  fnNames: { h: string, m: string, s: string } ): H_M_S {
 	let {h, m, s} = fnNames;
 
-	return getPreparedObject<HMS>({
+	return getPreparedObject<H_M_S>({
 		h: () => toStr(date[h]()),
 		m: () => toStr(date[m]()),
 		s: () => toStr(date[s]())

@@ -1,16 +1,16 @@
-export declare type YMD = {
+export declare type Y_M_D = {
 	y: string;
 	m: string;
 	d: string;
 };
 
-export declare type HMS = {
+export declare type H_M_S = {
 	h: string;
 	m: string;
 	s: string;
 };
 
 export declare type YMD_HMS = {
-	ymd: YMD;
-	hms: HMS;
+	ymd: Y_M_D;
+	hms: H_M_S;
 };
