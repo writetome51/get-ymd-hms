@@ -15,14 +15,12 @@ export function get_ymd_hms(date: Date,  time: 'local' | 'UTC',  options): YMD_H
 
 
 export function get_ymd_local(date: Date, options): Y_M_D {
-	let fnNames = {y: 'getFullYear', m: 'getMonth', d: 'getDate'};
-	return get_ymd(date, fnNames, options);
+	return get_ymd(date, {y: 'getFullYear', m: 'getMonth', d: 'getDate'}, options);
 }
 
 
 export function get_ymd_UTC(date: Date, options): Y_M_D {
-	let fnNames = {y: 'getUTCFullYear', m: 'getUTCMonth', d: 'getUTCDate'};
-	return get_ymd(date, fnNames, options);
+	return get_ymd(date, {y: 'getUTCFullYear', m: 'getUTCMonth', d: 'getUTCDate'}, options);
 }
 
 
@@ -41,7 +39,7 @@ export function get_ymd(
 ): Y_M_D {
 	let {y, m, d} = fnNames;
 
-	return getPreparedObject(fnNames, date, {
+	return getPreparedObject(undefined, undefined, {
 		y: () => {
 			let s = toStr(date[y]());
 			if (not(options.includeFullYear)) s = s.slice(2); // trims off first 2 digits
@@ -59,16 +57,16 @@ export function get_hms(date: Date,  fnNames: { h: string, m: string, s: string 
 
 
 export function getPreparedObject<T>(
-	fnNames: {[key: string]: string},
+	fnNames: { [p: string]: string },
 	date: Date,
-	functionMap?: { [key: string]: () => string } // Must have same keys as `fnNames`
+	functionMap?: { [p: string]: () => string }, // Must have same keys as `fnNames`
 ): T {
-	if (noValue(functionMap)) functionMap = getDefault_functionMap();
+	if (noValue(functionMap)) functionMap = getDefault_functionMap(fnNames, date);
 	let obj: T = replaceFunctionsWithResults(functionMap);
 	return assureMoreThanOneDigitForEach(obj);
 
 
-	function getDefault_functionMap() {
+	function getDefault_functionMap(fnNames, date) {
 		functionMap = {};
 
 		for (let keys = Object.keys(fnNames), i = 0, length = keys.length; i < length; ++i) {
