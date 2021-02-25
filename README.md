@@ -26,13 +26,15 @@ Each string has 2 digits.
 
 ## Examples
 ```ts
-get_ymd_hms_local();
-// -->  {ymd: {y: '15', m: '02', d: '20'}, hms: {h: '13', m: '30', s: '30'}}
-//       (2015, February 20th, 1:30pm and 30 seconds)
+let date = new Date();
 
-get_ymd_hms_UTC({includeFullYear: true});
-// -->  {ymd: {y: '2015', m: '02', d: '20'}, hms: {h: '13', m: '30', s: '30'}}
-//       (2015, February 20th, 1:30pm and 30 seconds)
+get_ymd_hms_local(date);
+// -->  {ymd: {y: '21', m: '02', d: '20'},  hms: {h: '13', m: '30', s: '30'}}
+//       (2021, February 20th, 1:30pm and 30 seconds, 7 hours behind UTC)
+
+get_ymd_hms_UTC(date, {includeFullYear: true});
+// -->  {ymd: {y: '2021', m: '02', d: '20'},  hms: {h: '20', m: '30', s: '30'}}
+//       (2021, February 20th, 8:30pm and 30 seconds, UTC)
 ```
 
 ## Installation
