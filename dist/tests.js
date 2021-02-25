@@ -1,7 +1,7 @@
 import {get_hms_local, get_ymd_local} from './privy/privy.js';
 import {get_ymd_hms_local, get_ymd_hms_UTC} from './index.js';
 
-// Tests 1 thru 3 cover functions in ./privy.js
+// Tests 1 thru 3 cover functions in ./privy/privy.js
 
 let date = new Date();
 let result = get_ymd_local(date, {includeFullYear: false});

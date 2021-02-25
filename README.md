@@ -11,17 +11,11 @@ These types are part of the public API:
 # YMD_HMS = {ymd: Y_M_D, hms: H_M_S}
 
 # Y_M_D = {y: string, m: string, d: string}
-Each string has 2 digits, except: `Y_M_D.y` will have 4 digits if `options.includeFullYear`  
+Each string has 2 digits, except: `y` will have 4 digits if `options.includeFullYear`  
 is `true`.
 
 # H_M_S = {h: string, m: string, s: string}
 Each string has 2 digits.
-
-
-
-
-
-
 
 
 ## Examples
@@ -35,6 +29,9 @@ get_ymd_hms_UTC(date, {includeFullYear: true});
 get_ymd_hms_local(date, {includeFullYear: true});
 // -->  {ymd: {y: '2021', m: '02', d: '20'},  hms: {h: '13', m: '30', s: '30'}}
 //       (2021, February 20th, 1:30pm and 30 seconds, 7 hours behind UTC)
+
+get_ymd_hms_local(date);
+// -->  {ymd: {y: '21', m: '02', d: '20'},  hms: {h: '13', m: '30', s: '30'}}
 ```
 
 ## Installation
