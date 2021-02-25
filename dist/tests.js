@@ -4,7 +4,7 @@ import {get_ymd_hms_local, get_ymd_hms_UTC} from './index.js';
 // Tests 1 thru 3 cover functions in ./privy
 
 let date = new Date();
-let result = get_ymd_local(date);
+let result = get_ymd_local(date, {includeFullYear: false});
 let keysCombined = Object.keys(result).join('');
 if (typeof result === 'object' && Object.keys(result).length === 3 && keysCombined === 'ymd') {
 	console.log('test 1 passed');
