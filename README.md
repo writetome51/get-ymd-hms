@@ -28,13 +28,13 @@ Each string has 2 digits.
 ```ts
 let date = new Date();
 
-get_ymd_hms_local(date);
-// -->  {ymd: {y: '21', m: '02', d: '20'},  hms: {h: '13', m: '30', s: '30'}}
-//       (2021, February 20th, 1:30pm and 30 seconds, 7 hours behind UTC)
-
 get_ymd_hms_UTC(date, {includeFullYear: true});
 // -->  {ymd: {y: '2021', m: '02', d: '20'},  hms: {h: '20', m: '30', s: '30'}}
 //       (2021, February 20th, 8:30pm and 30 seconds, UTC)
+
+get_ymd_hms_local(date, {includeFullYear: true});
+// -->  {ymd: {y: '2021', m: '02', d: '20'},  hms: {h: '13', m: '30', s: '30'}}
+//       (2021, February 20th, 1:30pm and 30 seconds, 7 hours behind UTC)
 ```
 
 ## Installation
@@ -43,7 +43,7 @@ get_ymd_hms_UTC(date, {includeFullYear: true});
 
 ## Loading
 ```ts
-import { get_ymd_hms } from '@writetome51/get-ymd-hms';
+import { get_ymd_hms_local, get_ymd_hms_UTC } from '@writetome51/get-ymd-hms';
 ```
 
 ## License

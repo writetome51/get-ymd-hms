@@ -27,6 +27,7 @@
   "homepage": "https://github.com/writetome51/get-ymd-hms#readme",
   "devDependencies": {},
   "dependencies": {
+    "@writetome51/has-value-no-value": ">=2.0.0",
     "@writetome51/not": ">=1.0.5",
     "@writetome51/to-str": ">=0.0.1"
   }
